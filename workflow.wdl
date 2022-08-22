@@ -4,7 +4,7 @@ task test_docker_path {
   input {
     String abs_path = "/nextstrain"
     String? my_command
-    String docker_img = "nextstrain:base/latest"
+    String docker_img = "nextstrain/base:latest"
   }
   command <<<
     set -v
@@ -15,7 +15,9 @@ task test_docker_path {
     pwd
     ls -ltr "~{abs_path}" # should succeed if path exists
 
-    "~{my_command}"
+    echo "my_command = ~{my_command} "
+
+    ~{my_command}
   >>>
   output {
     String stdout_str = read_string(stdout())
