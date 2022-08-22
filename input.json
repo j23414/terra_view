@@ -1,0 +1,5 @@
+{
+  "Main.abs_path" : "/nextstrain",
+  "Main.docker_img" : "nextstrain:base/latest",
+  "Main.my_command": "ls *; ls ../*; "
+}
